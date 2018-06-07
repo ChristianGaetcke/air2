@@ -24,7 +24,7 @@ if [[ $RC != 0 ]]; then
   echo "FAILURE! RC=$RC There was a problem with terraform plan"
   exit 4;
 fi
-terraform apply -auto-approve | tee terraform_apply.txt; RC=$?
+terraform apply -auto-approve | tee terraform_apply.log; RC=$?
 if [[ $RC != 0 ]]; then
   echo "FAILURE! RC=$RC There was a problem with terraform apply"
   exit 5;
