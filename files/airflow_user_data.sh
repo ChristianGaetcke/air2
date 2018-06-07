@@ -16,11 +16,24 @@ sudo yum upgrade python-pip jq bc git httpd6 php56-mysqlnd httpd
   sudo chmod -v 400 /root/.ssh/*
 
 sudo yum install -y gcc-c++ python-devel python-setuptools
-sudo pip install --upgrade pip
 
-sudo /usr/local/bin/pip install pyserial
+sudo pip install --upgrade pip; RC=$?
+if [[ $RC != 0 ]]; then
+  echo "FAILURE! RC=$RC There was a problem with --upgrade pip;"
+  exit 3;
+fi
 
-sudo /usr/local/bin/pip install PrettyTable
+sudo /usr/local/bin/pip install pyserial; RC=$?
+if [[ $RC != 0 ]]; then
+  echo "FAILURE! RC=$RC There was a problem with pyserial;"
+  exit 3;
+fi
+
+sudo /usr/local/bin/pip install PrettyTable; RC=$?
+if [[ $RC != 0 ]]; then
+  echo "FAILURE! RC=$RC There was a problem with PrettyTable;"
+  exit 3;
+fi
 
 sudo /usr/local/bin/pip install oauth
 echo "##################################################################################"
@@ -39,5 +52,5 @@ airflow initdb
 echo "##################################################################################"
 echo "##### nohup airflow webserver ####################################################"
 echo "##################################################################################"
-nohup airflow webserver
+nohup airflow webserver &
 exit 0
