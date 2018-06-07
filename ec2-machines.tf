@@ -46,6 +46,8 @@ resource "aws_instance" "airflow" {
     inline = [
       "chmod +x /home/ec2-user/airflow_user_data.sh",
       "/home/ec2-user/airflow_user_data.sh",
+	    "airflow initdb",
+	    "nohup airflow webserver &",
     ]
 	    connection {
       user                    = "ec2-user"
