@@ -14,11 +14,6 @@ sudo yum upgrade python-pip jq bc git httpd6 php56-mysqlnd httpd
   echo "##################################################################################"
   sudo cp /home/ec2-user/.ssh/ej_key_pair.pem /root/.ssh/ej_key_pair.pem
   sudo chmod -v 400 /root/.ssh/*
-sudo yum install git -y  ; RC=$?
-if [[ $RC! = 0 ]]; then
-    echo "FAILURE! RC=$RC with yum install git -y"
-    exit 2;
-fi
 
 sudo yum install -y gcc-c++ python-devel python-setuptools
 sudo pip install --upgrade pip
@@ -36,15 +31,7 @@ echo "##########################################################################
 echo "##### sudo /usr/local/bin/pip install argparse ###################################"
 echo "##################################################################################"
 sudo /usr/local/bin/pip install argparse
-#sudo /usr/local/bin/pip install --ignore-installed airflow[s3,hive,python]
-echo "##################################################################################"
-echo "##### git clone ##################################################################"
-echo "##################################################################################"
-git clone https://github.com/apache/incubator-airflow; RC=$?
-if [[ $RC! = 0 ]]; then
-    echo "FAILURE! RC=$RC There was a problem with terraform init"
-    exit 9;
-fi
+sudo /usr/local/bin/pip install --ignore-installed airflow[s3,hive,python]
 echo "##################################################################################"
 echo "##### airflow initdb #############################################################"
 echo "##################################################################################"
