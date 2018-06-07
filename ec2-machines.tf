@@ -16,10 +16,6 @@ resource "aws_instance" "airflow" {
   # TODO: make this instance profile have access to private chef bucket
   iam_instance_profile        = "${aws_iam_instance_profile.ssm_profile.id}"
 
-  tags {
-        Name                  = "airflow"
-        Environment           = "Test"
-  }
 
   provisioner "file" {
     source                    = "/Users/ej/.ssh/id_rsa"
@@ -56,6 +52,10 @@ resource "aws_instance" "airflow" {
       private_key             = "${file("/Users/ej/.ssh/ej_key_pair.pem")}"
       timeout                 = "300s"
     }
+  }
+  tags {
+        Name                  = "airflow"
+        Environment           = "Test"
   }
 }
 
