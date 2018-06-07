@@ -16,8 +16,12 @@ resource "aws_instance" "airflow" {
   # TODO: make this instance profile have access to private chef bucket
   iam_instance_profile        = "${aws_iam_instance_profile.ssm_profile.id}"
 
+  tags {
+        Name                  = "airflow"
+        Environment           = "Test"
+  }
 
- provisioner "file" {
+  provisioner "file" {
     source                    = "/Users/ej/.ssh/id_rsa"
     destination               = "/home/ec2-user/.ssh/id_rsa"
     connection {
@@ -27,22 +31,20 @@ resource "aws_instance" "airflow" {
       private_key             = "${file("/Users/ej/.ssh/ej_key_pair.pem")}"
       timeout                 = "300s"
     }
-  }
+   }
 
-
-    provisioner "file" {
-    source                    = "/vol1/air2/files/airflow_user_data.sh"
-    destination               = "/home/ec2-user/airflow_user_data.sh"
-    connection {
-      user                    = "ec2-user"
-      agent                   = "false"
-      type                    = "ssh"
-      private_key             = "${file("/Users/ej/.ssh/ej_key_pair.pem")}"
-      timeout                 = "300s"
+   provisioner "file" {
+     source                    = "/vol1/air2/files/airflow_user_data.sh"
+     connection {
+      user                     = "ec2-user"
+      agent                    = "false"
+      type                     = "ssh"
+      private_key              = "${file("/Users/ej/.ssh/ej_key_pair.pem")}"
+      timeout                  = "300s"
     }
   }
 
-   provisioner "remote-exec" {
+  provisioner "remote-exec" {
     inline = [
       "chmod +x /home/ec2-user/airflow_user_data.sh",
       "/home/ec2-user/airflow_user_data.sh"]
