@@ -1,0 +1,1284 @@
+[0m[1mdata.aws_iam_policy.ReadOnlyAccess: Refreshing state...[0m
+[0m[1mdata.aws_availability_zones.available: Refreshing state...[0m
+[0m[1maws_eip.forNat: Creating...[0m
+  allocation_id:     "" => "<computed>"
+  association_id:    "" => "<computed>"
+  domain:            "" => "<computed>"
+  instance:          "" => "<computed>"
+  network_interface: "" => "<computed>"
+  private_ip:        "" => "<computed>"
+  public_ip:         "" => "<computed>"
+  vpc:               "" => "true"[0m
+[0m[1maws_iam_role.ssm_role: Creating...[0m
+  arn:                   "" => "<computed>"
+  assume_role_policy:    "" => "{\n  \t  \"Version\": \"2012-10-17\",\n  \t  \"Statement\": [\n      {\t      \"Action\": \"sts:AssumeRole\",\n        \"Principal\": {\n         \"Service\": \"ec2.amazonaws.com\"\n       },\n       \"Effect\": \"Allow\",\n      \"Sid\": \"\"\n      }\n    ]\n  }\n"
+  create_date:           "" => "<computed>"
+  force_detach_policies: "" => "false"
+  max_session_duration:  "" => "3600"
+  name:                  "" => "ssm_role"
+  path:                  "" => "/"
+  unique_id:             "" => "<computed>"[0m
+[0m[1maws_vpc.terraformmain: Creating...[0m
+  assign_generated_ipv6_cidr_block: "" => "false"
+  cidr_block:                       "" => "172.28.0.0/16"
+  default_network_acl_id:           "" => "<computed>"
+  default_route_table_id:           "" => "<computed>"
+  default_security_group_id:        "" => "<computed>"
+  dhcp_options_id:                  "" => "<computed>"
+  enable_classiclink:               "" => "<computed>"
+  enable_classiclink_dns_support:   "" => "<computed>"
+  enable_dns_hostnames:             "" => "true"
+  enable_dns_support:               "" => "true"
+  instance_tenancy:                 "" => "<computed>"
+  ipv6_association_id:              "" => "<computed>"
+  ipv6_cidr_block:                  "" => "<computed>"
+  main_route_table_id:              "" => "<computed>"
+  tags.%:                           "" => "1"
+  tags.Name:                        "" => "My terraform vpc"[0m
+[0m[1maws_iam_role.ssm_role: Creation complete after 0s (ID: ssm_role)[0m[0m
+[0m[1maws_iam_instance_profile.ssm_profile: Creating...[0m
+  arn:         "" => "<computed>"
+  create_date: "" => "<computed>"
+  name:        "" => "ssm_profile"
+  path:        "" => "/"
+  role:        "" => "ssm_role"
+  roles.#:     "" => "<computed>"
+  unique_id:   "" => "<computed>"[0m
+[0m[1maws_eip.forNat: Creation complete after 0s (ID: eipalloc-9122a999)[0m[0m
+[0m[1maws_iam_instance_profile.ssm_profile: Creation complete after 1s (ID: ssm_profile)[0m[0m
+[0m[1maws_vpc.terraformmain: Still creating... (10s elapsed)[0m[0m
+[0m[1maws_vpc.terraformmain: Still creating... (20s elapsed)[0m[0m
+[0m[1maws_vpc.terraformmain: Still creating... (30s elapsed)[0m[0m
+[0m[1maws_vpc.terraformmain: Creation complete after 33s (ID: vpc-ba6e78c1)[0m[0m
+[0m[1maws_subnet.PublicAZA: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-east-1a"
+  cidr_block:                      "" => "172.28.0.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "PublicAZA"
+  vpc_id:                          "" => "vpc-ba6e78c1"[0m
+[0m[1maws_subnet.PublicAZB: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-east-1b"
+  cidr_block:                      "" => "172.28.1.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "PublicAZB"
+  vpc_id:                          "" => "vpc-ba6e78c1"[0m
+[0m[1maws_subnet.PrivateAZA: Creating...[0m
+  assign_ipv6_address_on_creation: "" => "false"
+  availability_zone:               "" => "us-east-1b"
+  cidr_block:                      "" => "172.28.3.0/24"
+  ipv6_cidr_block:                 "" => "<computed>"
+  ipv6_cidr_block_association_id:  "" => "<computed>"
+  map_public_ip_on_launch:         "" => "false"
+  tags.%:                          "" => "1"
+  tags.Name:                       "" => "PublicAZB"
+  vpc_id:                          "" => "vpc-ba6e78c1"[0m
+[0m[1maws_network_acl.all: Creating...[0m
+  egress.#:                           "" => "1"
+  egress.2943206146.action:           "" => "allow"
+  egress.2943206146.cidr_block:       "" => "0.0.0.0/0"
+  egress.2943206146.from_port:        "" => "0"
+  egress.2943206146.icmp_code:        "" => ""
+  egress.2943206146.icmp_type:        "" => ""
+  egress.2943206146.ipv6_cidr_block:  "" => ""
+  egress.2943206146.protocol:         "" => "-1"
+  egress.2943206146.rule_no:          "" => "2"
+  egress.2943206146.to_port:          "" => "0"
+  ingress.#:                          "" => "1"
+  ingress.1564094202.action:          "" => "allow"
+  ingress.1564094202.cidr_block:      "" => "0.0.0.0/0"
+  ingress.1564094202.from_port:       "" => "0"
+  ingress.1564094202.icmp_code:       "" => ""
+  ingress.1564094202.icmp_type:       "" => ""
+  ingress.1564094202.ipv6_cidr_block: "" => ""
+  ingress.1564094202.protocol:        "" => "-1"
+  ingress.1564094202.rule_no:         "" => "1"
+  ingress.1564094202.to_port:         "" => "0"
+  subnet_ids.#:                       "" => "<computed>"
+  tags.%:                             "" => "1"
+  tags.Name:                          "" => "open acl"
+  vpc_id:                             "" => "vpc-ba6e78c1"[0m
+[0m[1maws_internet_gateway.gw: Creating...[0m
+  tags.%:    "0" => "1"
+  tags.Name: "" => "internet gw terraform generated"
+  vpc_id:    "" => "vpc-ba6e78c1"[0m
+[0m[1maws_security_group.my_db_sg: Creating...[0m
+  arn:                                   "" => "<computed>"
+  description:                           "" => "RDS  servers (terraform-managed)"
+  egress.#:                              "" => "1"
+  egress.482069346.cidr_blocks.#:        "" => "1"
+  egress.482069346.cidr_blocks.0:        "" => "0.0.0.0/0"
+  egress.482069346.description:          "" => ""
+  egress.482069346.from_port:            "" => "0"
+  egress.482069346.ipv6_cidr_blocks.#:   "" => "0"
+  egress.482069346.prefix_list_ids.#:    "" => "0"
+  egress.482069346.protocol:             "" => "-1"
+  egress.482069346.security_groups.#:    "" => "0"
+  egress.482069346.self:                 "" => "false"
+  egress.482069346.to_port:              "" => "0"
+  ingress.#:                             "" => "1"
+  ingress.1163740523.cidr_blocks.#:      "" => "1"
+  ingress.1163740523.cidr_blocks.0:      "" => "0.0.0.0/0"
+  ingress.1163740523.description:        "" => ""
+  ingress.1163740523.from_port:          "" => "3306"
+  ingress.1163740523.ipv6_cidr_blocks.#: "" => "0"
+  ingress.1163740523.protocol:           "" => "tcp"
+  ingress.1163740523.security_groups.#:  "" => "0"
+  ingress.1163740523.self:               "" => "false"
+  ingress.1163740523.to_port:            "" => "3306"
+  name:                                  "" => "my_db_sg"
+  owner_id:                              "" => "<computed>"
+  revoke_rules_on_delete:                "" => "false"
+  tags.%:                                "" => "1"
+  tags.Name:                             "" => "RDSMYSQL"
+  vpc_id:                                "" => "vpc-ba6e78c1"[0m
+[0m[1maws_security_group.FrontEnd: Creating...[0m
+  arn:                                   "" => "<computed>"
+  description:                           "" => "ONLY HTTP CONNECTION IN-BOUND"
+  egress.#:                              "" => "1"
+  egress.482069346.cidr_blocks.#:        "" => "1"
+  egress.482069346.cidr_blocks.0:        "" => "0.0.0.0/0"
+  egress.482069346.description:          "" => ""
+  egress.482069346.from_port:            "" => "0"
+  egress.482069346.ipv6_cidr_blocks.#:   "" => "0"
+  egress.482069346.prefix_list_ids.#:    "" => "0"
+  egress.482069346.protocol:             "" => "-1"
+  egress.482069346.security_groups.#:    "" => "0"
+  egress.482069346.self:                 "" => "false"
+  egress.482069346.to_port:              "" => "0"
+  ingress.#:                             "" => "5"
+  ingress.2214680975.cidr_blocks.#:      "" => "1"
+  ingress.2214680975.cidr_blocks.0:      "" => "0.0.0.0/0"
+  ingress.2214680975.description:        "" => ""
+  ingress.2214680975.from_port:          "" => "80"
+  ingress.2214680975.ipv6_cidr_blocks.#: "" => "0"
+  ingress.2214680975.protocol:           "" => "tcp"
+  ingress.2214680975.security_groups.#:  "" => "0"
+  ingress.2214680975.self:               "" => "false"
+  ingress.2214680975.to_port:            "" => "80"
+  ingress.2541437006.cidr_blocks.#:      "" => "1"
+  ingress.2541437006.cidr_blocks.0:      "" => "0.0.0.0/0"
+  ingress.2541437006.description:        "" => ""
+  ingress.2541437006.from_port:          "" => "22"
+  ingress.2541437006.ipv6_cidr_blocks.#: "" => "0"
+  ingress.2541437006.protocol:           "" => "tcp"
+  ingress.2541437006.security_groups.#:  "" => "0"
+  ingress.2541437006.self:               "" => "false"
+  ingress.2541437006.to_port:            "" => "22"
+  ingress.2617001939.cidr_blocks.#:      "" => "1"
+  ingress.2617001939.cidr_blocks.0:      "" => "0.0.0.0/0"
+  ingress.2617001939.description:        "" => ""
+  ingress.2617001939.from_port:          "" => "443"
+  ingress.2617001939.ipv6_cidr_blocks.#: "" => "0"
+  ingress.2617001939.protocol:           "" => "tcp"
+  ingress.2617001939.security_groups.#:  "" => "0"
+  ingress.2617001939.self:               "" => "false"
+  ingress.2617001939.to_port:            "" => "443"
+  ingress.3733929900.cidr_blocks.#:      "" => "1"
+  ingress.3733929900.cidr_blocks.0:      "" => "0.0.0.0/0"
+  ingress.3733929900.description:        "" => ""
+  ingress.3733929900.from_port:          "" => "100"
+  ingress.3733929900.ipv6_cidr_blocks.#: "" => "0"
+  ingress.3733929900.protocol:           "" => "tcp"
+  ingress.3733929900.security_groups.#:  "" => "0"
+  ingress.3733929900.self:               "" => "false"
+  ingress.3733929900.to_port:            "" => "100"
+  ingress.516175195.cidr_blocks.#:       "" => "1"
+  ingress.516175195.cidr_blocks.0:       "" => "0.0.0.0/0"
+  ingress.516175195.description:         "" => ""
+  ingress.516175195.from_port:           "" => "8080"
+  ingress.516175195.ipv6_cidr_blocks.#:  "" => "0"
+  ingress.516175195.protocol:            "" => "tcp"
+  ingress.516175195.security_groups.#:   "" => "0"
+  ingress.516175195.self:                "" => "false"
+  ingress.516175195.to_port:             "" => "8080"
+  name:                                  "" => "FrontEnd"
+  owner_id:                              "" => "<computed>"
+  revoke_rules_on_delete:                "" => "false"
+  tags.%:                                "" => "1"
+  tags.Name:                             "" => "FrontEnd"
+  vpc_id:                                "" => "vpc-ba6e78c1"[0m
+[0m[1maws_internet_gateway.gw: Creation complete after 1s (ID: igw-516f3e29)[0m[0m
+[0m[1maws_network_acl.all: Creation complete after 1s (ID: acl-f8dfae82)[0m[0m
+[0m[1maws_route_table.public: Creating...[0m
+  propagating_vgws.#:                         "" => "<computed>"
+  route.#:                                    "" => "1"
+  route.1138605175.cidr_block:                "" => "0.0.0.0/0"
+  route.1138605175.egress_only_gateway_id:    "" => ""
+  route.1138605175.gateway_id:                "" => "igw-516f3e29"
+  route.1138605175.instance_id:               "" => ""
+  route.1138605175.ipv6_cidr_block:           "" => ""
+  route.1138605175.nat_gateway_id:            "" => ""
+  route.1138605175.network_interface_id:      "" => ""
+  route.1138605175.vpc_peering_connection_id: "" => ""
+  tags.%:                                     "" => "1"
+  tags.Name:                                  "" => "Public"
+  vpc_id:                                     "" => "vpc-ba6e78c1"[0m
+[0m[1maws_subnet.PrivateAZA: Creation complete after 1s (ID: subnet-867ea8a8)[0m[0m
+[0m[1maws_subnet.PublicAZA: Creation complete after 1s (ID: subnet-04d00063)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Creating...[0m
+  allocation_id:        "" => "eipalloc-9122a999"
+  network_interface_id: "" => "<computed>"
+  private_ip:           "" => "<computed>"
+  public_ip:            "" => "<computed>"
+  subnet_id:            "" => "subnet-04d00063"[0m
+[0m[1maws_subnet.PublicAZB: Creation complete after 1s (ID: subnet-c84d9be6)[0m[0m
+[0m[1maws_route_table.public: Creation complete after 1s (ID: rtb-a472b2db)[0m[0m
+[0m[1maws_route_table_association.PublicAZA: Creating...[0m
+  route_table_id: "" => "rtb-a472b2db"
+  subnet_id:      "" => "subnet-04d00063"[0m
+[0m[1maws_route_table_association.PublicAZB: Creating...[0m
+  route_table_id: "" => "rtb-a472b2db"
+  subnet_id:      "" => "subnet-c84d9be6"[0m
+[0m[1maws_route_table_association.PublicAZB: Creation complete after 0s (ID: rtbassoc-f4c5c38b)[0m[0m
+[0m[1maws_route_table_association.PublicAZA: Creation complete after 0s (ID: rtbassoc-26cfc959)[0m[0m
+[0m[1maws_security_group.my_db_sg: Creation complete after 3s (ID: sg-fc3023b4)[0m[0m
+[0m[1maws_security_group.FrontEnd: Creation complete after 3s (ID: sg-7e0e1d36)[0m[0m
+[0m[1maws_instance.airflow: Creating...[0m
+  ami:                               "" => "ami-1853ac65"
+  associate_public_ip_address:       "" => "true"
+  availability_zone:                 "" => "<computed>"
+  ebs_block_device.#:                "" => "<computed>"
+  ephemeral_block_device.#:          "" => "<computed>"
+  get_password_data:                 "" => "false"
+  iam_instance_profile:              "" => "ssm_profile"
+  instance_state:                    "" => "<computed>"
+  instance_type:                     "" => "t2.micro"
+  ipv6_address_count:                "" => "<computed>"
+  ipv6_addresses.#:                  "" => "<computed>"
+  key_name:                          "" => "ej_key_pair"
+  network_interface.#:               "" => "<computed>"
+  network_interface_id:              "" => "<computed>"
+  password_data:                     "" => "<computed>"
+  placement_group:                   "" => "<computed>"
+  primary_network_interface_id:      "" => "<computed>"
+  private_dns:                       "" => "<computed>"
+  private_ip:                        "" => "<computed>"
+  public_dns:                        "" => "<computed>"
+  public_ip:                         "" => "<computed>"
+  root_block_device.#:               "" => "<computed>"
+  security_groups.#:                 "" => "<computed>"
+  source_dest_check:                 "" => "true"
+  subnet_id:                         "" => "subnet-04d00063"
+  tenancy:                           "" => "<computed>"
+  volume_tags.%:                     "" => "<computed>"
+  vpc_security_group_ids.#:          "" => "1"
+  vpc_security_group_ids.1936995780: "" => "sg-7e0e1d36"[0m
+[0m[1maws_security_group.Backend: Creating...[0m
+  arn:                                           "" => "<computed>"
+  description:                                   "" => "ONLY tcp CONNECTION INBOUND"
+  egress.#:                                      "" => "1"
+  egress.482069346.cidr_blocks.#:                "" => "1"
+  egress.482069346.cidr_blocks.0:                "" => "0.0.0.0/0"
+  egress.482069346.description:                  "" => ""
+  egress.482069346.from_port:                    "" => "0"
+  egress.482069346.ipv6_cidr_blocks.#:           "" => "0"
+  egress.482069346.prefix_list_ids.#:            "" => "0"
+  egress.482069346.protocol:                     "" => "-1"
+  egress.482069346.security_groups.#:            "" => "0"
+  egress.482069346.self:                         "" => "false"
+  egress.482069346.to_port:                      "" => "0"
+  ingress.#:                                     "" => "3"
+  ingress.2219530748.cidr_blocks.#:              "" => "0"
+  ingress.2219530748.description:                "" => ""
+  ingress.2219530748.from_port:                  "" => "5432"
+  ingress.2219530748.ipv6_cidr_blocks.#:         "" => "0"
+  ingress.2219530748.protocol:                   "" => "tcp"
+  ingress.2219530748.security_groups.#:          "" => "1"
+  ingress.2219530748.security_groups.1936995780: "" => "sg-7e0e1d36"
+  ingress.2219530748.self:                       "" => "false"
+  ingress.2219530748.to_port:                    "" => "5432"
+  ingress.2223400681.cidr_blocks.#:              "" => "1"
+  ingress.2223400681.cidr_blocks.0:              "" => "0.0.0.0/0"
+  ingress.2223400681.description:                "" => ""
+  ingress.2223400681.from_port:                  "" => "3389"
+  ingress.2223400681.ipv6_cidr_blocks.#:         "" => "0"
+  ingress.2223400681.protocol:                   "" => "tcp"
+  ingress.2223400681.security_groups.#:          "" => "0"
+  ingress.2223400681.self:                       "" => "false"
+  ingress.2223400681.to_port:                    "" => "3389"
+  ingress.2541437006.cidr_blocks.#:              "" => "1"
+  ingress.2541437006.cidr_blocks.0:              "" => "0.0.0.0/0"
+  ingress.2541437006.description:                "" => ""
+  ingress.2541437006.from_port:                  "" => "22"
+  ingress.2541437006.ipv6_cidr_blocks.#:         "" => "0"
+  ingress.2541437006.protocol:                   "" => "tcp"
+  ingress.2541437006.security_groups.#:          "" => "0"
+  ingress.2541437006.self:                       "" => "false"
+  ingress.2541437006.to_port:                    "" => "22"
+  name:                                          "" => "Backend"
+  owner_id:                                      "" => "<computed>"
+  revoke_rules_on_delete:                        "" => "false"
+  tags.%:                                        "" => "1"
+  tags.Name:                                     "" => "Backend"
+  vpc_id:                                        "" => "vpc-ba6e78c1"[0m
+[0m[1maws_security_group.Backend: Creation complete after 2s (ID: sg-1c362554)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (10s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Still creating... (10s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (20s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Still creating... (20s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (30s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Still creating... (30s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (40s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Still creating... (40s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (50s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Still creating... (50s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (1m0s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Still creating... (1m0s elapsed)[0m[0m
+[0m[1maws_instance.airflow: Provisioning with 'file'...[0m[0m
+[0m[1maws_instance.airflow: Provisioning with 'file'...[0m[0m
+[0m[1maws_instance.airflow: Provisioning with 'remote-exec'...[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Connecting to remote host via SSH...
+aws_instance.airflow (remote-exec):   Host: 34.201.20.56
+aws_instance.airflow (remote-exec):   User: ec2-user
+aws_instance.airflow (remote-exec):   Password: false
+aws_instance.airflow (remote-exec):   Private key: true
+aws_instance.airflow (remote-exec):   SSH Agent: false
+aws_instance.airflow (remote-exec):   Checking Host Key: false
+[0m[0maws_instance.airflow (remote-exec): Connected!
+[0m[0maws_instance.airflow (remote-exec): ##################################################################################
+[0m[0maws_instance.airflow (remote-exec): ##### EJ's user_data.sh ##########################################################
+[0m[0maws_instance.airflow (remote-exec): ##################################################################################
+[0m[0maws_instance.airflow (remote-exec): ##################################################################################
+[0m[0maws_instance.airflow (remote-exec): Loaded plugins: priorities, update-motd,
+[0m[0maws_instance.airflow (remote-exec):               : upgrade-helper
+[0m[0maws_instance.airflow (remote-exec): No Match for argument: python-pip
+[0m[0maws_instance.airflow (remote-exec): No package [1mpython-pip(B[m available.
+[0m[0maws_instance.airflow (remote-exec): Package(s) [1mjq(B[m available, but not installed.
+[0m[0maws_instance.airflow (remote-exec): Package(s) [1mgit(B[m available, but not installed.
+[0m[0maws_instance.airflow (remote-exec): No Match for argument: httpd6
+[0m[0maws_instance.airflow (remote-exec): No package [1mhttpd6(B[m available.
+[0m[0maws_instance.airflow (remote-exec): Package(s) [1mphp56-mysqlnd(B[m available, but not installed.
+[0m[0maws_instance.airflow (remote-exec): Package(s) [1mhttpd(B[m available, but not installed.
+[0m[0maws_instance.airflow (remote-exec): No packages marked for update
+[0m[0maws_instance.airflow (remote-exec): ##################################################################################
+[0m[0maws_instance.airflow (remote-exec): ##### copy keys ##################################################################
+[0m[0maws_instance.airflow (remote-exec): ##################################################################################
+[0m[0maws_instance.airflow (remote-exec): cp: cannot stat ‘/home/ec2-user/.ssh/ej_key_pair.pem’: No such file or directory
+[0m[0maws_instance.airflow (remote-exec): chmod: cannot access ‘/root/.ssh/*’: No such file or directory
+[0m[0maws_instance.airflow (remote-exec): failed to change mode of ‘/root/.ssh/*’ from 0000 (---------) to 0000 (---------)
+[0m[0maws_instance.airflow (remote-exec): Loaded plugins: priorities, update-motd,
+[0m[0maws_instance.airflow (remote-exec):               : upgrade-helper
+[0m[0maws_instance.airflow (remote-exec): Resolving Dependencies
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package git.x86_64 0:2.13.6-2.56.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: perl-Git = 2.13.6-2.56.amzn1 for package: git-2.13.6-2.56.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: perl(Term::ReadKey) for package: git-2.13.6-2.56.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: perl(Git::I18N) for package: git-2.13.6-2.56.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: perl(Git) for package: git-2.13.6-2.56.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: perl(Error) for package: git-2.13.6-2.56.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package perl-Error.noarch 1:0.17020-2.9.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package perl-Git.noarch 0:2.13.6-2.56.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package perl-TermReadKey.x86_64 0:2.30-20.9.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Finished Dependency Resolution
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Dependencies Resolved
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): ========================================
+[0m[0maws_instance.airflow (remote-exec):  Package     Arch   Version
+[0m[0maws_instance.airflow (remote-exec):                         Repository
+[0m[0maws_instance.airflow (remote-exec):                                    Size
+[0m[0maws_instance.airflow (remote-exec): ========================================
+[0m[0maws_instance.airflow (remote-exec): Installing:
+[0m[0maws_instance.airflow (remote-exec):  git         x86_64 2.13.6-2.56.amzn1
+[0m[0maws_instance.airflow (remote-exec):                         amzn-main  11 M
+[0m[0maws_instance.airflow (remote-exec): Installing for dependencies:
+[0m[0maws_instance.airflow (remote-exec):  perl-Error  noarch 1:0.17020-2.9.amzn1
+[0m[0maws_instance.airflow (remote-exec):                         amzn-main  33 k
+[0m[0maws_instance.airflow (remote-exec):  perl-Git    noarch 2.13.6-2.56.amzn1
+[0m[0maws_instance.airflow (remote-exec):                         amzn-main  69 k
+[0m[0maws_instance.airflow (remote-exec):  perl-TermReadKey
+[0m[0maws_instance.airflow (remote-exec):              x86_64 2.30-20.9.amzn1
+[0m[0maws_instance.airflow (remote-exec):                         amzn-main  33 k
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Transaction Summary
+[0m[0maws_instance.airflow (remote-exec): ========================================
+[0m[0maws_instance.airflow (remote-exec): Install  1 Package (+3 Dependent packages)
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Total download size: 12 M
+[0m[0maws_instance.airflow (remote-exec): Installed size: 29 M
+[0m[0maws_instance.airflow (remote-exec): Downloading packages:
+[0m[0maws_instance.airflow (remote-exec): (1/4): perl-Error- |  33 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (2/4): perl-Git-2. |  69 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (4/4): perl-Ter 3% | 416 kB   --:-- ETA
+aws_instance.airflow (remote-exec): (3/4): perl-TermRe |  33 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (4/4): git-2.1 29% | 3.4 MB   00:02 ETA
+[0m[0maws_instance.airflow (remote-exec): (4/4): git-2.1 94% |  11 MB   00:00 ETA
+aws_instance.airflow (remote-exec): (4/4): git-2.13.6- |  11 MB   00:01
+[0m[0maws_instance.airflow (remote-exec): ----------------------------------------
+[0m[0maws_instance.airflow (remote-exec): Total      9.0 MB/s |  12 MB  00:01
+[0m[0maws_instance.airflow (remote-exec): Running transaction check
+[0m[0maws_instance.airflow (remote-exec): Running transaction test
+[0m[0maws_instance.airflow (remote-exec): Transaction test succeeded
+[0m[0maws_instance.airflow (remote-exec): Running transaction
+[0m[0maws_instance.airflow (remote-exec):   Installing : 1:perl-E [         ] 1/4
+aws_instance.airflow (remote-exec):   Installing : 1:perl-E [#        ] 1/4
+aws_instance.airflow (remote-exec):   Installing : 1:perl-E [##       ] 1/4
+aws_instance.airflow (remote-exec):   Installing : 1:perl-E [####     ] 1/4
+aws_instance.airflow (remote-exec):   Installing : 1:perl-E [######## ] 1/4
+aws_instance.airflow (remote-exec):   Installing : 1:perl-Error-0.170   1/4
+[0m[0maws_instance.airflow (remote-exec):   Installing : perl-Ter [         ] 2/4
+aws_instance.airflow (remote-exec):   Installing : perl-Ter [##       ] 2/4
+aws_instance.airflow (remote-exec):   Installing : perl-Ter [#######  ] 2/4
+aws_instance.airflow (remote-exec):   Installing : perl-Ter [######## ] 2/4
+aws_instance.airflow (remote-exec):   Installing : perl-TermReadKey-2   2/4
+[0m[0maws_instance.airflow (remote-exec):   Installing : perl-Git [         ] 3/4
+aws_instance.airflow (remote-exec):   Installing : perl-Git [#        ] 3/4
+aws_instance.airflow (remote-exec):   Installing : perl-Git [######## ] 3/4
+aws_instance.airflow (remote-exec):   Installing : perl-Git-2.13.6-2.   3/4
+[0m[0maws_instance.airflow (remote-exec):   Installing : git-2.13 [         ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [#        ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [##       ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [###      ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [####     ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [#####    ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [######   ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [#######  ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13 [######## ] 4/4
+aws_instance.airflow (remote-exec):   Installing : git-2.13.6-2.56.am   4/4
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : 1:perl-Error-0.170   1/4
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : perl-Git-2.13.6-2.   2/4
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : perl-TermReadKey-2   3/4
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : git-2.13.6-2.56.am   4/4
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Installed:
+[0m[0maws_instance.airflow (remote-exec):   git.x86_64 0:2.13.6-2.56.amzn1
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Dependency Installed:
+[0m[0maws_instance.airflow (remote-exec):   perl-Error.noarch 1:0.17020-2.9.amzn1
+[0m[0maws_instance.airflow (remote-exec):   perl-Git.noarch 0:2.13.6-2.56.amzn1
+[0m[0maws_instance.airflow (remote-exec):   perl-TermReadKey.x86_64 0:2.30-20.9.amzn1
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Complete!
+[0m[0maws_instance.airflow (remote-exec): Loaded plugins: priorities, update-motd,
+[0m[0maws_instance.airflow (remote-exec):               : upgrade-helper
+[0m[0maws_instance.airflow (remote-exec): Existing lock /var/run/yum.pid: another copy is running as pid 2797.
+[0m[0maws_instance.airflow (remote-exec): Another app is currently holding the yum lock; waiting for it to exit...
+[0m[0maws_instance.airflow (remote-exec):   The other application is: yum
+[0m[0maws_instance.airflow (remote-exec):     Memory :  40 M RSS (287 MB VSZ)
+[0m[0maws_instance.airflow (remote-exec):     Started: Thu Jun  7 10:28:24 2018 - 00:01 ago
+[0m[0maws_instance.airflow (remote-exec):     State  : Running, pid: 2797
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (1m10s elapsed)[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Resolving Dependencies
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package gcc-c++.noarch 0:4.8.5-1.22.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: gcc = 4.8.5-1.22.amzn1 for package: gcc-c++-4.8.5-1.22.amzn1.noarch
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: gcc48-c++ >= 4.8.5 for package: gcc-c++-4.8.5-1.22.amzn1.noarch
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libstdc++48 >= 4.8.5 for package: gcc-c++-4.8.5-1.22.amzn1.noarch
+[0m[0maws_instance.airflow (remote-exec): ---> Package python26-devel.x86_64 0:2.6.9-2.89.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python26(x86-64) = 2.6.9-2.89.amzn1 for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python26(x86-64) = 2.6.9-2.89.amzn1 for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python26(x86-64) = 2.6.9-2.89.amzn1 for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python(abi) = 2.6 for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python26(alternatives) for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: /usr/bin/python2.6 for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libpython2.6.so.1.0()(64bit) for package: python26-devel-2.6.9-2.89.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): ---> Package python26-setuptools.noarch 0:36.2.7-1.33.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python26-backports-ssl_match_hostname for package: python26-setuptools-36.2.7-1.33.amzn1.noarch
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package gcc.noarch 0:4.8.5-1.22.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: gcc48 >= 4.8.5 for package: gcc-4.8.5-1.22.amzn1.noarch
+[0m[0maws_instance.airflow (remote-exec): ---> Package gcc48-c++.x86_64 0:4.8.5-28.142.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libmpfr.so.4()(64bit) for package: gcc48-c++-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libmpc.so.3()(64bit) for package: gcc48-c++-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): ---> Package libstdc++48.x86_64 0:4.8.5-28.142.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package python26.x86_64 0:2.6.9-2.89.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package python26-backports-ssl_match_hostname.noarch 0:3.4.0.2-1.12.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: python26-backports for package: python26-backports-ssl_match_hostname-3.4.0.2-1.12.amzn1.noarch
+[0m[0maws_instance.airflow (remote-exec): ---> Package python26-libs.x86_64 0:2.6.9-2.89.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package gcc48.x86_64 0:4.8.5-28.142.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libgcc48(x86-64) = 4.8.5 for package: gcc48-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: cpp48(x86-64) = 4.8.5-28.142.amzn1 for package: gcc48-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libgomp(x86-64) >= 4.8.5-28.142.amzn1 for package: gcc48-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: glibc-devel(x86-64) >= 2.2.90-12 for package: gcc48-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: libgomp.so.1()(64bit) for package: gcc48-4.8.5-28.142.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): ---> Package libmpc.x86_64 0:1.0.1-3.3.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package mpfr.x86_64 0:3.1.1-4.14.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package python26-backports.x86_64 0:1.0-3.14.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package cpp48.x86_64 0:4.8.5-28.142.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package glibc-devel.x86_64 0:2.17-222.173.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: glibc-headers = 2.17-222.173.amzn1 for package: glibc-devel-2.17-222.173.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: glibc-headers for package: glibc-devel-2.17-222.173.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): ---> Package libgcc48.x86_64 0:4.8.5-28.142.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): ---> Package libgomp.x86_64 0:6.4.1-1.45.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package glibc-headers.x86_64 0:2.17-222.173.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.17-222.173.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Processing Dependency: kernel-headers for package: glibc-headers-2.17-222.173.amzn1.x86_64
+[0m[0maws_instance.airflow (remote-exec): --> Running transaction check
+[0m[0maws_instance.airflow (remote-exec): ---> Package kernel-headers.x86_64 0:4.14.42-52.37.amzn1 will be installed
+[0m[0maws_instance.airflow (remote-exec): --> Finished Dependency Resolution
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Dependencies Resolved
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): ========================================
+[0m[0maws_instance.airflow (remote-exec):  Package   Arch   Version
+[0m[0maws_instance.airflow (remote-exec):                      Repository    Size
+[0m[0maws_instance.airflow (remote-exec): ========================================
+[0m[0maws_instance.airflow (remote-exec): Installing:
+[0m[0maws_instance.airflow (remote-exec):  gcc-c++   noarch 4.8.5-1.22.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    4.0 k
+[0m[0maws_instance.airflow (remote-exec):  python26-devel
+[0m[0maws_instance.airflow (remote-exec):            x86_64 2.6.9-2.89.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    185 k
+[0m[0maws_instance.airflow (remote-exec):  python26-setuptools
+[0m[0maws_instance.airflow (remote-exec):            noarch 36.2.7-1.33.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    675 k
+[0m[0maws_instance.airflow (remote-exec): Installing for dependencies:
+[0m[0maws_instance.airflow (remote-exec):  cpp48     x86_64 4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 6.7 M
+[0m[0maws_instance.airflow (remote-exec):  gcc       noarch 4.8.5-1.22.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    4.1 k
+[0m[0maws_instance.airflow (remote-exec):  gcc48     x86_64 4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates  18 M
+[0m[0maws_instance.airflow (remote-exec):  gcc48-c++ x86_64 4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 9.8 M
+[0m[0maws_instance.airflow (remote-exec):  glibc-devel
+[0m[0maws_instance.airflow (remote-exec):            x86_64 2.17-222.173.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 1.1 M
+[0m[0maws_instance.airflow (remote-exec):  glibc-headers
+[0m[0maws_instance.airflow (remote-exec):            x86_64 2.17-222.173.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 753 k
+[0m[0maws_instance.airflow (remote-exec):  kernel-headers
+[0m[0maws_instance.airflow (remote-exec):            x86_64 4.14.42-52.37.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 1.2 M
+[0m[0maws_instance.airflow (remote-exec):  libgcc48  x86_64 4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 155 k
+[0m[0maws_instance.airflow (remote-exec):  libgomp   x86_64 6.4.1-1.45.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    204 k
+[0m[0maws_instance.airflow (remote-exec):  libmpc    x86_64 1.0.1-3.3.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main     53 k
+[0m[0maws_instance.airflow (remote-exec):  libstdc++48
+[0m[0maws_instance.airflow (remote-exec):            x86_64 4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-updates 408 k
+[0m[0maws_instance.airflow (remote-exec):  mpfr      x86_64 3.1.1-4.14.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    237 k
+[0m[0maws_instance.airflow (remote-exec):  python26  x86_64 2.6.9-2.89.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    5.8 M
+[0m[0maws_instance.airflow (remote-exec):  python26-backports
+[0m[0maws_instance.airflow (remote-exec):            x86_64 1.0-3.14.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    5.2 k
+[0m[0maws_instance.airflow (remote-exec):  python26-backports-ssl_match_hostname
+[0m[0maws_instance.airflow (remote-exec):            noarch 3.4.0.2-1.12.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main     12 k
+[0m[0maws_instance.airflow (remote-exec):  python26-libs
+[0m[0maws_instance.airflow (remote-exec):            x86_64 2.6.9-2.89.amzn1
+[0m[0maws_instance.airflow (remote-exec):                      amzn-main    697 k
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Transaction Summary
+[0m[0maws_instance.airflow (remote-exec): ========================================
+[0m[0maws_instance.airflow (remote-exec): Install  3 Packages (+16 Dependent packages)
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Total download size: 46 M
+[0m[0maws_instance.airflow (remote-exec): Installed size: 105 M
+[0m[0maws_instance.airflow (remote-exec): Downloading packages:
+[0m[0maws_instance.airflow (remote-exec): (1/19): gcc-c++-4. | 4.0 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (3/19): gcc-4.8 0% | 4.0 kB   --:-- ETA
+aws_instance.airflow (remote-exec): (2/19): gcc-4.8.5- | 4.1 kB   00:00
+[0m[1maws_instance.airflow: Still creating... (1m10s elapsed)[0m[0m
+[0m[0maws_instance.airflow (remote-exec): (4/19): gcc48-4 0% | 326 kB   01:35 ETA
+[0m[0maws_instance.airflow (remote-exec): (4/19): gcc48-4 6% | 2.8 MB   00:45 ETA
+[0m[0maws_instance.airflow (remote-exec): (4/19): gcc48- 19% | 9.1 MB   00:17 ETA
+[0m[0maws_instance.airflow (remote-exec): (3/19): cpp48- 39% |  18 MB   00:07 ETA
+aws_instance.airflow (remote-exec): (3/19): cpp48-4.8. | 6.7 MB   00:01
+[0m[0maws_instance.airflow (remote-exec): (4/19): gcc48-4.8. |  18 MB   00:01
+[0m[0maws_instance.airflow (remote-exec): (5/19): glibc-deve | 1.1 MB   00:00
+[0m[0maws_instance.airflow (remote-exec): (6/19): gcc48- 61% |  28 MB   00:03 ETA
+[0m[0maws_instance.airflow (remote-exec): (6/19): gcc48- 72% |  33 MB   00:02 ETA
+aws_instance.airflow (remote-exec): (6/19): gcc48-c++- | 9.8 MB   00:00
+[0m[0maws_instance.airflow (remote-exec): (7/19): glibc-head | 753 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (8/19): libgcc48-4 | 155 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (10/19): libgo 82% |  38 MB   00:01 ETA
+aws_instance.airflow (remote-exec): (9/19): libstdc++4 | 408 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (10/19): kernel-he | 1.2 MB   00:00
+[0m[0maws_instance.airflow (remote-exec): (11/19): libgomp-6 | 204 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (12/19): mpfr-3.1. | 237 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (14/19): pytho 88% |  40 MB   00:00 ETA
+[0m[0maws_instance.airflow (remote-exec): (13/19): python26- | 5.8 MB   00:00
+[0m[0maws_instance.airflow (remote-exec): (14/19): python26- | 5.2 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (15/19): python26- |  12 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (16/19): python26- | 185 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (17/19): libmpc-1. |  53 kB   00:01
+[0m[0maws_instance.airflow (remote-exec): (18/19): python26- | 697 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): (19/19): pytho 99% |  45 MB   00:00 ETA
+[0m[0maws_instance.airflow (remote-exec): (19/19): python26- | 675 kB   00:00
+[0m[0maws_instance.airflow (remote-exec): ----------------------------------------
+[0m[0maws_instance.airflow (remote-exec): Total      8.8 MB/s |  46 MB  00:05
+[0m[0maws_instance.airflow (remote-exec): Running transaction check
+[0m[0maws_instance.airflow (remote-exec): Running transaction test
+[0m[0maws_instance.airflow (remote-exec): Transaction test succeeded
+[0m[0maws_instance.airflow (remote-exec): Running transaction
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [        ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#       ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [##      ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [###     ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####    ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#####   ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [######  ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####### ]  1/19
+aws_instance.airflow (remote-exec):   Installing : python26-libs-2.    1/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [        ]  2/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#       ]  2/19
+aws_instance.airflow (remote-exec):   Installing : python2 [##      ]  2/19
+aws_instance.airflow (remote-exec):   Installing : python2 [###     ]  2/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####    ]  2/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#####   ]  2/19
+aws_instance.airflow (remote-exec):   Installing : python2 [######  ]  2/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [####### ]  2/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python26-2.6.9-2    2/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : mpfr-3. [        ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [#       ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [##      ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [###     ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [####    ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [#####   ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [######  ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3. [####### ]  3/19
+aws_instance.airflow (remote-exec):   Installing : mpfr-3.1.1-4.14.    3/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : libmpc- [        ]  4/19
+aws_instance.airflow (remote-exec):   Installing : libmpc- [####    ]  4/19
+aws_instance.airflow (remote-exec):   Installing : libmpc- [######  ]  4/19
+aws_instance.airflow (remote-exec):   Installing : libmpc- [####### ]  4/19
+aws_instance.airflow (remote-exec):   Installing : libmpc-1.0.1-3.3    4/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : libgcc4 [        ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc4 [##      ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc4 [###     ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc4 [####    ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc4 [#####   ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc4 [######  ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc4 [####### ]  5/19
+aws_instance.airflow (remote-exec):   Installing : libgcc48-4.8.5-2    5/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : libstdc [        ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [#       ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [##      ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [###     ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [####    ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [#####   ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [######  ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc [####### ]  6/19
+aws_instance.airflow (remote-exec):   Installing : libstdc++48-4.8.    6/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : cpp48-4 [        ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [#       ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [##      ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [###     ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [####    ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [#####   ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [######  ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4 [####### ]  7/19
+aws_instance.airflow (remote-exec):   Installing : cpp48-4.8.5-28.1    7/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [        ]  8/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#       ]  8/19
+aws_instance.airflow (remote-exec):   Installing : python2 [##      ]  8/19
+aws_instance.airflow (remote-exec):   Installing : python2 [###     ]  8/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#####   ]  8/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####### ]  8/19
+aws_instance.airflow (remote-exec):   Installing : python26-backpor    8/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [        ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#       ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python2 [##      ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####    ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#####   ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python2 [######  ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####### ]  9/19
+aws_instance.airflow (remote-exec):   Installing : python26-backpor    9/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : libgomp [        ] 10/19
+aws_instance.airflow (remote-exec):   Installing : libgomp [#       ] 10/19
+aws_instance.airflow (remote-exec):   Installing : libgomp [###     ] 10/19
+aws_instance.airflow (remote-exec):   Installing : libgomp [#####   ] 10/19
+aws_instance.airflow (remote-exec):   Installing : libgomp [######  ] 10/19
+aws_instance.airflow (remote-exec):   Installing : libgomp [####### ] 10/19
+aws_instance.airflow (remote-exec):   Installing : libgomp-6.4.1-1.   10/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : kernel- [        ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [#       ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [##      ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [###     ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [####    ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [#####   ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [######  ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel- [####### ] 11/19
+aws_instance.airflow (remote-exec):   Installing : kernel-headers-4   11/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : glibc-h [        ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [#       ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [##      ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [###     ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [####    ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [#####   ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [######  ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-h [####### ] 12/19
+aws_instance.airflow (remote-exec):   Installing : glibc-headers-2.   12/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : glibc-d [        ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [#       ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [##      ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [###     ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [####    ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [#####   ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [######  ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-d [####### ] 13/19
+aws_instance.airflow (remote-exec):   Installing : glibc-devel-2.17   13/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : gcc48-4 [        ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [#       ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [##      ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [###     ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [####    ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [#####   ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [######  ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4 [####### ] 14/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-4.8.5-28.1   14/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : gcc-4.8 [        ] 15/19
+aws_instance.airflow (remote-exec):   Installing : gcc-4.8.5-1.22.a   15/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : gcc48-c [        ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [#       ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [##      ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [###     ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [####    ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [#####   ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [######  ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c [####### ] 16/19
+aws_instance.airflow (remote-exec):   Installing : gcc48-c++-4.8.5-   16/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : gcc-c++ [        ] 17/19
+aws_instance.airflow (remote-exec):   Installing : gcc-c++-4.8.5-1.   17/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [        ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#       ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [##      ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [###     ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####    ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#####   ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [######  ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####### ] 18/19
+aws_instance.airflow (remote-exec):   Installing : python26-setupto   18/19
+[0m[0maws_instance.airflow (remote-exec):   Installing : python2 [        ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#       ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [##      ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [###     ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####    ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [#####   ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [######  ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python2 [####### ] 19/19
+aws_instance.airflow (remote-exec):   Installing : python26-devel-2   19/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : libgcc48-4.8.5-2    1/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : gcc-4.8.5-1.22.a    2/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : python26-backpor    3/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : gcc48-c++-4.8.5-    4/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : cpp48-4.8.5-28.1    5/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : python26-setupto    6/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : kernel-headers-4    7/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : libstdc++48-4.8.    8/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : glibc-headers-2.    9/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : gcc-c++-4.8.5-1.   10/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : mpfr-3.1.1-4.14.   11/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : glibc-devel-2.17   12/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : libmpc-1.0.1-3.3   13/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : python26-2.6.9-2   14/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : python26-devel-2   15/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : libgomp-6.4.1-1.   16/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : python26-libs-2.   17/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : python26-backpor   18/19
+[0m[0maws_instance.airflow (remote-exec):   Verifying  : gcc48-4.8.5-28.1   19/19
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Installed:
+[0m[0maws_instance.airflow (remote-exec):   gcc-c++.noarch 0:4.8.5-1.22.amzn1
+[0m[0maws_instance.airflow (remote-exec):   python26-devel.x86_64 0:2.6.9-2.89.amzn1
+[0m[0maws_instance.airflow (remote-exec):   python26-setuptools.noarch 0:36.2.7-1.33.amzn1
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Dependency Installed:
+[0m[0maws_instance.airflow (remote-exec):   cpp48.x86_64 0:4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):   gcc.noarch 0:4.8.5-1.22.amzn1
+[0m[0maws_instance.airflow (remote-exec):   gcc48.x86_64 0:4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):   gcc48-c++.x86_64 0:4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):   glibc-devel.x86_64 0:2.17-222.173.amzn1
+[0m[0maws_instance.airflow (remote-exec):   glibc-headers.x86_64 0:2.17-222.173.amzn1
+[0m[0maws_instance.airflow (remote-exec):   kernel-headers.x86_64 0:4.14.42-52.37.amzn1
+[0m[0maws_instance.airflow (remote-exec):   libgcc48.x86_64 0:4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):   libgomp.x86_64 0:6.4.1-1.45.amzn1
+[0m[0maws_instance.airflow (remote-exec):   libmpc.x86_64 0:1.0.1-3.3.amzn1
+[0m[0maws_instance.airflow (remote-exec):   libstdc++48.x86_64 0:4.8.5-28.142.amzn1
+[0m[0maws_instance.airflow (remote-exec):   mpfr.x86_64 0:3.1.1-4.14.amzn1
+[0m[0maws_instance.airflow (remote-exec):   python26.x86_64 0:2.6.9-2.89.amzn1
+[0m[0maws_instance.airflow (remote-exec):   python26-backports.x86_64 0:1.0-3.14.amzn1
+[0m[0maws_instance.airflow (remote-exec):   python26-backports-ssl_match_hostname.noarch 0:3.4.0.2-1.12.amzn1
+[0m[0maws_instance.airflow (remote-exec):   python26-libs.x86_64 0:2.6.9-2.89.amzn1
+[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Complete!
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (1m20s elapsed)[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Collecting pip
+[0m[0maws_instance.airflow (remote-exec):   Downloading https://files.pythonhosted.org/packages/0f/74/ecd13431bcc456ed390b44c8a6e917c1820365cbebcb6a8974d1cd045ab4/pip-10.0.1-py2.py3-none-any.whl (1.3MB)
+[0m[0maws_instance.airflow (remote-exec): [?25l
+aws_instance.airflow (remote-exec): [K    0% |▎                               | 10kB 47.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    1% |▌                               | 20kB 30.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    2% |▊                               | 30kB 16.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    3% |█                               | 40kB 12.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    3% |█▎                              | 51kB 11.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    4% |█▌                              | 61kB 13.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    5% |█▊                              | 71kB 13.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    6% |██                              | 81kB 14.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    7% |██▎                             | 92kB 14.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    7% |██▌                             | 102kB 14.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    8% |██▊                             | 112kB 14.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    9% |███                             | 122kB 14.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    10% |███▎                            | 133kB 14.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    10% |███▌                            | 143kB 18.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    11% |███▊                            | 153kB 19.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    12% |████                            | 163kB 19.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    13% |████▎                           | 174kB 21.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    14% |████▌                           | 184kB 20.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    14% |████▊                           | 194kB 22.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    15% |█████                           | 204kB 24.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    16% |█████▎                          | 215kB 23.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    17% |█████▌                          | 225kB 23.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    18% |█████▊                          | 235kB 28.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    18% |██████                          | 245kB 27.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    19% |██████▎                         | 256kB 31.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    20% |██████▌                         | 266kB 29.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    21% |██████▊                         | 276kB 29.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    21% |███████                         | 286kB 31.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    22% |███████▎                        | 296kB 30.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    23% |███████▌                        | 307kB 33.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    24% |███████▊                        | 317kB 34.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    25% |████████                        | 327kB 33.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    25% |████████▎                       | 337kB 34.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    26% |████████▌                       | 348kB 34.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    27% |████████▊                       | 358kB 33.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    28% |█████████                       | 368kB 35.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    28% |█████████▎                      | 378kB 37.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    29% |█████████▌                      | 389kB 37.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    30% |█████████▊                      | 399kB 38.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    31% |██████████                      | 409kB 38.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    32% |██████████▎                     | 419kB 39.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    32% |██████████▌                     | 430kB 40.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    33% |██████████▊                     | 440kB 39.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    34% |███████████                     | 450kB 36.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    35% |███████████▎                    | 460kB 36.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    36% |███████████▌                    | 471kB 36.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    36% |███████████▊                    | 481kB 37.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    37% |████████████                    | 491kB 38.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    38% |████████████▎                   | 501kB 38.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    39% |████████████▌                   | 512kB 36.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    39% |████████████▉                   | 522kB 36.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    40% |█████████████                   | 532kB 37.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    41% |█████████████▎                  | 542kB 37.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    42% |█████████████▌                  | 552kB 41.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    43% |█████████████▉                  | 563kB 42.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    43% |██████████████                  | 573kB 41.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    44% |██████████████▎                 | 583kB 41.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    45% |██████████████▌                 | 593kB 41.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    46% |██████████████▉                 | 604kB 40.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    46% |███████████████                 | 614kB 42.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    47% |███████████████▎                | 624kB 40.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    48% |███████████████▌                | 634kB 38.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    49% |███████████████▉                | 645kB 38.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    50% |████████████████                | 655kB 37.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    50% |████████████████▎               | 665kB 37.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    51% |████████████████▌               | 675kB 36.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    52% |████████████████▉               | 686kB 35.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    53% |█████████████████               | 696kB 36.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    54% |█████████████████▎              | 706kB 37.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    54% |█████████████████▌              | 716kB 36.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    55% |█████████████████▉              | 727kB 36.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    56% |██████████████████              | 737kB 37.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    57% |██████████████████▎             | 747kB 39.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    57% |██████████████████▌             | 757kB 39.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    58% |██████████████████▉             | 768kB 38.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    59% |███████████████████             | 778kB 39.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    60% |███████████████████▎            | 788kB 39.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    61% |███████████████████▌            | 798kB 37.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    61% |███████████████████▉            | 808kB 35.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    62% |████████████████████            | 819kB 34.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    63% |████████████████████▎           | 829kB 36.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    64% |████████████████████▌           | 839kB 35.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    64% |████████████████████▉           | 849kB 33.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    65% |█████████████████████           | 860kB 34.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    66% |█████████████████████▎          | 870kB 33.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    67% |█████████████████████▌          | 880kB 33.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    68% |█████████████████████▉          | 890kB 31.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    68% |██████████████████████          | 901kB 31.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    69% |██████████████████████▎         | 911kB 33.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    70% |██████████████████████▌         | 921kB 34.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    71% |██████████████████████▉         | 931kB 33.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    72% |███████████████████████         | 942kB 34.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    72% |███████████████████████▎        | 952kB 34.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    73% |███████████████████████▌        | 962kB 34.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    74% |███████████████████████▉        | 972kB 35.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    75% |████████████████████████        | 983kB 35.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    75% |████████████████████████▎       | 993kB 36.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    76% |████████████████████████▋       | 1.0MB 35.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    77% |████████████████████████▉       | 1.0MB 34.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    78% |█████████████████████████       | 1.0MB 35.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    79% |█████████████████████████▎      | 1.0MB 35.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    79% |█████████████████████████▋      | 1.0MB 37.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    80% |█████████████████████████▉      | 1.1MB 38.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    81% |██████████████████████████      | 1.1MB 38.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    82% |██████████████████████████▎     | 1.1MB 40.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    83% |██████████████████████████▋     | 1.1MB 43.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    83% |██████████████████████████▉     | 1.1MB 44.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    84% |███████████████████████████     | 1.1MB 47.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    85% |███████████████████████████▎    | 1.1MB 48.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    86% |███████████████████████████▋    | 1.1MB 45.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    86% |███████████████████████████▉    | 1.1MB 46.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    87% |████████████████████████████    | 1.1MB 46.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    88% |████████████████████████████▎   | 1.2MB 47.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    89% |████████████████████████████▋   | 1.2MB 47.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    90% |████████████████████████████▉   | 1.2MB 46.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    90% |█████████████████████████████   | 1.2MB 46.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    91% |█████████████████████████████▎  | 1.2MB 47.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    92% |█████████████████████████████▋  | 1.2MB 47.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    93% |█████████████████████████████▉  | 1.2MB 47.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    93% |██████████████████████████████  | 1.2MB 49.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    94% |██████████████████████████████▎ | 1.2MB 51.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    95% |██████████████████████████████▋ | 1.2MB 51.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    96% |██████████████████████████████▉ | 1.3MB 50.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    97% |███████████████████████████████ | 1.3MB 51.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    97% |███████████████████████████████▎| 1.3MB 51.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    98% |███████████████████████████████▋| 1.3MB 51.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    99% |███████████████████████████████▉| 1.3MB 51.6MB/s eta 0:00:01
+[0m[0maws_instance.airflow (remote-exec): [K    100% |████████████████████████████████| 1.3MB 844kB/s
+[0m[0maws_instance.airflow (remote-exec): [?25hInstalling collected packages: pip
+[0m[0maws_instance.airflow (remote-exec):   Found existing installation: pip 9.0.1
+[0m[0maws_instance.airflow (remote-exec):     Uninstalling pip-9.0.1:
+[0m[0maws_instance.airflow (remote-exec):       Successfully uninstalled pip-9.0.1
+[0m[0maws_instance.airflow (remote-exec): Successfully installed pip-10.0.1
+[0m[1maws_instance.airflow: Still creating... (1m20s elapsed)[0m[0m
+[0m[0maws_instance.airflow (remote-exec): Collecting pyserial
+[0m[0maws_instance.airflow (remote-exec): [?25l  Downloading https://files.pythonhosted.org/packages/0d/e4/2a744dd9e3be04a0c0907414e2a01a7c88bb3915cbe3c8cc06e209f59c30/pyserial-3.4-py2.py3-none-any.whl (193kB)
+[0m[0maws_instance.airflow (remote-exec): [K    5% |█▊                              | 10kB 21.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    10% |███▍                            | 20kB 24.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    15% |█████                           | 30kB 14.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    21% |██████▊                         | 40kB 9.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    26% |████████▌                       | 51kB 9.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    31% |██████████▏                     | 61kB 10.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    37% |███████████▉                    | 71kB 10.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    42% |█████████████▌                  | 81kB 10.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    47% |███████████████▎                | 92kB 11.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    52% |█████████████████               | 102kB 11.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    58% |██████████████████▋             | 112kB 12.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    63% |████████████████████▎           | 122kB 11.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    68% |██████████████████████          | 133kB 12.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    74% |███████████████████████▊        | 143kB 15.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    79% |█████████████████████████▍      | 153kB 17.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    84% |███████████████████████████     | 163kB 15.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    89% |████████████████████████████▊   | 174kB 17.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    95% |██████████████████████████████▌ | 184kB 20.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    100% |████████████████████████████████| 194kB 16.4MB/s
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires argparse, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires cheetah, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires oauth, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires PrettyTable, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [?25hInstalling collected packages: pyserial
+[0m[0maws_instance.airflow (remote-exec): Successfully installed pyserial-3.4
+[0m[0maws_instance.airflow (remote-exec): Collecting PrettyTable
+[0m[0maws_instance.airflow (remote-exec):   Downloading https://files.pythonhosted.org/packages/ef/30/4b0746848746ed5941f052479e7c23d2b56d174b82f4fd34a25e389831f5/prettytable-0.7.2.tar.bz2
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires argparse, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires cheetah, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires oauth, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): Installing collected packages: PrettyTable
+[0m[0maws_instance.airflow (remote-exec):   Running setup.py install for PrettyTable ... [?25l
+[0m[0maws_instance.airflow (remote-exec): - done
+[0m[0maws_instance.airflow (remote-exec): [?25hSuccessfully installed PrettyTable-0.7.2
+[0m[0maws_instance.airflow (remote-exec): Collecting oauth
+[0m[0maws_instance.airflow (remote-exec):   Downloading https://files.pythonhosted.org/packages/e2/10/d7d6ae26ef7686109a10b3e88d345c4ec6686d07850f4ef7baefb7eb61e1/oauth-1.0.1.tar.gz
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires argparse, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires cheetah, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): Installing collected packages: oauth
+[0m[0maws_instance.airflow (remote-exec):   Running setup.py install for oauth ... [?25l
+[0m[0maws_instance.airflow (remote-exec): - done
+[0m[0maws_instance.airflow (remote-exec): [?25hSuccessfully installed oauth-1.0.1
+[0m[0maws_instance.airflow (remote-exec): Collecting cheetah
+[0m[0maws_instance.airflow (remote-exec): [?25l  Downloading https://files.pythonhosted.org/packages/cd/b0/c2d700252fc251e91c08639ff41a8a5203b627f4e0a2ae18a6b662ab32ea/Cheetah-2.4.4.tar.gz (190kB)
+[0m[0maws_instance.airflow (remote-exec): [K    5% |█▊                              | 10kB 21.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    10% |███▍                            | 20kB 17.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    16% |█████▏                          | 30kB 19.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    21% |██████▉                         | 40kB 10.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    26% |████████▋                       | 51kB 9.6MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    32% |██████████▎                     | 61kB 10.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    37% |████████████                    | 71kB 10.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    42% |█████████████▊                  | 81kB 10.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    48% |███████████████▍                | 92kB 11.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    53% |█████████████████▏              | 102kB 11.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    58% |██████████████████▉             | 112kB 11.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    64% |████████████████████▋           | 122kB 11.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    69% |██████████████████████▎         | 133kB 11.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    75% |████████████████████████        | 143kB 13.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    80% |█████████████████████████▊      | 153kB 16.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    85% |███████████████████████████▌    | 163kB 14.8MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    91% |█████████████████████████████▏  | 174kB 16.9MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    96% |██████████████████████████████▉ | 184kB 20.1MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    100% |████████████████████████████████| 194kB 16.0MB/s
+[0m[0maws_instance.airflow (remote-exec): [?25h
+[0m[0maws_instance.airflow (remote-exec): Collecting Markdown>=2.0.1 (from cheetah)
+[0m[0maws_instance.airflow (remote-exec): [?25l  Downloading https://files.pythonhosted.org/packages/6d/7d/488b90f470b96531a3f5788cf12a93332f543dbab13c423a5e7ce96a0493/Markdown-2.6.11-py2.py3-none-any.whl (78kB)
+[0m[0maws_instance.airflow (remote-exec): [K    13% |████▏                           | 10kB 7.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    26% |████████▍                       | 20kB 7.4MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    39% |████████████▌                   | 30kB 10.2MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    52% |████████████████▊               | 40kB 9.3MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    65% |█████████████████████           | 51kB 10.0MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    78% |█████████████████████████       | 61kB 11.5MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    91% |█████████████████████████████▎  | 71kB 10.7MB/s eta 0:00:01
+aws_instance.airflow (remote-exec): [K    100% |████████████████████████████████| 81kB 10.3MB/s
+[0m[0maws_instance.airflow (remote-exec): [31mcloud-init 0.7.6 requires argparse, which is not installed.[0m
+[0m[0maws_instance.airflow (remote-exec): [?25hInstalling collected packages: Markdown, cheetah
+[0m[0maws_instance.airflow (remote-exec): [33m  The script markdown_py is installed in '/usr/local/bin' which is not on PATH.
+[0m[0maws_instance.airflow (remote-exec):   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.[0m
+[0m[0maws_instance.airflow (remote-exec):   Running setup.py install for cheetah ... [?25l
+[0m[0maws_instance.airflow (remote-exec): -
+[0m[0maws_instance.airflow (remote-exec):  \
+[0m[0maws_instance.airflow (remote-exec):  | done
+[0m[0maws_instance.airflow (remote-exec): [?25hSuccessfully installed Markdown-2.6.11 cheetah-2.4.4
+[0m[0maws_instance.airflow (remote-exec): Collecting argparse
+[0m[0maws_instance.airflow (remote-exec):   Downloading https://files.pythonhosted.org/packages/f2/94/3af39d34be01a24a6e65433d19e107099374224905f1e0cc6bbe1fd22a2f/argparse-1.4.0-py2.py3-none-any.whl
+[0m[0maws_instance.airflow (remote-exec): Installing collected packages: argparse
+[0m[0maws_instance.airflow (remote-exec): Successfully installed argparse-1.4.0
+[0m[0maws_instance.airflow (remote-exec): *******************************************
+[0m[0maws_instance.airflow (remote-exec): Cloning into 'incubator-airflow'...
+[0m[0maws_instance.airflow (remote-exec): remote: Counting objects: 32420, done.[K
+[0m[0maws_instance.airflow (remote-exec): Receiving objects:   0% (1/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   1% (325/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   2% (649/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   3% (973/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   4% (1297/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   5% (1621/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   6% (1946/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   7% (2270/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   8% (2594/32420)
+aws_instance.airflow (remote-exec): Receiving objects:   9% (2918/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  10% (3242/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  11% (3567/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  12% (3891/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  13% (4215/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  14% (4539/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  15% (4863/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  16% (5188/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  17% (5512/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  18% (5836/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  19% (6160/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  20% (6484/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  21% (6809/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  22% (7133/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  23% (7457/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  24% (7781/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  25% (8105/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  26% (8430/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  27% (8754/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  28% (9078/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  29% (9402/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  30% (9726/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  31% (10051/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  32% (10375/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  33% (10699/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  34% (11023/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  35% (11347/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  36% (11672/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  37% (11996/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  38% (12320/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  39% (12644/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  40% (12968/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  41% (13293/32420)
+aws_instance.airflow (remote-exec): Receiving objects:  42% (13617/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  43% (13941/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  44% (14265/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  45% (14589/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  46% (14914/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  47% (15238/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  48% (15562/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  49% (15886/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  50% (16210/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  51% (16535/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  52% (16859/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  53% (17183/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  54% (17507/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  55% (17831/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  56% (18156/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  57% (18480/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  58% (18804/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  59% (19128/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  60% (19452/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  61% (19777/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  62% (20101/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  63% (20425/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  64% (20749/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  65% (21073/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  66% (21398/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  67% (21722/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  68% (22046/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  69% (22370/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  70% (22694/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  71% (23019/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  72% (23343/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  73% (23667/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  74% (23991/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  75% (24315/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  76% (24640/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  77% (24964/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  78% (25288/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  79% (25612/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  80% (25936/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  81% (26261/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  82% (26585/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  83% (26909/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  84% (27233/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  85% (27557/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  86% (27882/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  87% (28206/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  88% (28530/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  89% (28854/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  90% (29178/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  91% (29503/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  92% (29827/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  93% (30151/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  94% (30475/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  95% (30799/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  96% (31124/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  97% (31448/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  98% (31772/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects:  99% (32096/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): remote: Total 32420 (delta 0), reused 0 (delta 0), pack-reused 32420[K
+[0m[0maws_instance.airflow (remote-exec): Receiving objects: 100% (32420/32420), 11.27 MiB | 22.54 MiB/s
+aws_instance.airflow (remote-exec): Receiving objects: 100% (32420/32420), 19.95 MiB | 24.40 MiB/s, done.
+[0m[0maws_instance.airflow (remote-exec): Resolving deltas:   0% (0/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   1% (234/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   2% (460/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   3% (689/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   4% (927/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   5% (1146/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   6% (1420/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   7% (1605/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   8% (1883/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:   9% (2068/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  10% (2309/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  11% (2537/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  12% (2754/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  13% (2995/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  14% (3246/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  15% (3445/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  16% (3667/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  17% (3896/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  18% (4129/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  19% (4357/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  20% (4615/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  21% (4919/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  22% (5137/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  23% (5334/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  24% (5524/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  25% (5732/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  26% (5967/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  27% (6215/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  28% (6429/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  29% (6653/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  30% (6876/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  31% (7108/22917)
+[0m[0maws_instance.airflow (remote-exec): Resolving deltas:  33% (7616/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  34% (7797/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  35% (8052/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  36% (8280/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  37% (8486/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  38% (8710/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  39% (8950/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  40% (9169/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  41% (9403/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  42% (9666/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  43% (9858/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  44% (10109/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  45% (10314/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  46% (10552/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  47% (10787/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  48% (11001/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  49% (11294/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  50% (11471/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  51% (11758/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  52% (11923/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  53% (12249/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  54% (12381/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  55% (12607/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  56% (12835/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  57% (13068/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  58% (13294/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  59% (13528/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  60% (13804/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  61% (14036/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  62% (14271/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  63% (14442/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  64% (14680/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  65% (14930/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  66% (15149/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  67% (15419/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  68% (15746/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  70% (16153/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  71% (16339/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  72% (16577/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  73% (16731/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  74% (16962/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  75% (17189/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  76% (17436/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  77% (17672/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  78% (17880/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  79% (18107/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  81% (18723/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  82% (18878/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  83% (19040/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  84% (19257/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  85% (19491/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  86% (19719/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  87% (20083/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  88% (20176/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  89% (20412/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  90% (20629/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  92% (21213/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  93% (21333/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  94% (21542/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  95% (21816/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  96% (22069/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  97% (22250/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  98% (22482/22917)
+aws_instance.airflow (remote-exec): Resolving deltas:  99% (22700/22917)
+aws_instance.airflow (remote-exec): Resolving deltas: 100% (22917/22917)
+aws_instance.airflow (remote-exec): Resolving deltas: 100% (22917/22917), done.
+[0m[0maws_instance.airflow (remote-exec): /home/ec2-user/airflow_user_data.sh: line 40: airflow: command not found
+[0m[0maws_instance.airflow (remote-exec): nohup: ignoring input and appending output to ‘nohup.out’
+[0m[0maws_instance.airflow (remote-exec): nohup: failed to run command ‘airflow’: No such file or directory
+[0m[1maws_instance.airflow: Creation complete after 1m28s (ID: i-01cadb021c910c94b)[0m[0m
+[0m[1maws_route53_record.airflow: Creating...[0m
+  allow_overwrite:    "" => "true"
+  fqdn:               "" => "<computed>"
+  name:               "" => "airflow.erich.com"
+  records.#:          "" => "1"
+  records.4078051950: "" => "ec2-34-201-20-56.compute-1.amazonaws.com"
+  ttl:                "" => "60"
+  type:               "" => "CNAME"
+  zone_id:            "" => "ZBVO8OQHTFSNO"[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (1m30s elapsed)[0m[0m
+[0m[1maws_route53_record.airflow: Still creating... (10s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Still creating... (1m40s elapsed)[0m[0m
+[0m[1maws_nat_gateway.PublicAZA: Creation complete after 1m47s (ID: nat-04169a5e12204f98d)[0m[0m
+[0m[1maws_route_table.private: Creating...[0m
+  propagating_vgws.#:                         "" => "<computed>"
+  route.#:                                    "" => "1"
+  route.3934727069.cidr_block:                "" => "0.0.0.0/0"
+  route.3934727069.egress_only_gateway_id:    "" => ""
+  route.3934727069.gateway_id:                "" => ""
+  route.3934727069.instance_id:               "" => ""
+  route.3934727069.ipv6_cidr_block:           "" => ""
+  route.3934727069.nat_gateway_id:            "" => "nat-04169a5e12204f98d"
+  route.3934727069.network_interface_id:      "" => ""
+  route.3934727069.vpc_peering_connection_id: "" => ""
+  tags.%:                                     "" => "1"
+  tags.Name:                                  "" => "Private"
+  vpc_id:                                     "" => "vpc-ba6e78c1"[0m
+[0m[1maws_route_table.private: Creation complete after 0s (ID: rtb-9d72b2e2)[0m[0m
+[0m[1maws_route_table_association.PrivateAZA: Creating...[0m
+  route_table_id: "" => "rtb-9d72b2e2"
+  subnet_id:      "" => "subnet-867ea8a8"[0m
+[0m[1maws_route_table_association.PrivateAZA: Creation complete after 1s (ID: rtbassoc-81c0c6fe)[0m[0m
+[0m[1maws_route53_record.airflow: Still creating... (20s elapsed)[0m[0m
+[0m[1maws_route53_record.airflow: Still creating... (30s elapsed)[0m[0m
+[0m[1maws_route53_record.airflow: Still creating... (40s elapsed)[0m[0m
+[0m[1maws_route53_record.airflow: Creation complete after 46s (ID: ZBVO8OQHTFSNO_airflow.erich.com_CNAME)[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 20 added, 0 changed, 0 destroyed.[0m
